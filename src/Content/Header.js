@@ -1,11 +1,15 @@
 
 // import './Header.css';
-import logo from '../img/LOGO.PNG'
+import logo from '../img/antCloud.svg'
 
 function Header(props){
     return(
         <div className="header"> 
-            <img alt="" src={logo} width="252" height="57" /> <p>wellcome Orit! </p>       
+            <div className='logo'>
+                <img alt="" src={logo} width="100" height="40" />
+                <span>ANTS cloud</span>
+            </div> 
+            <p>wellcome Orit! </p>       
         </div>
     ) 
 }

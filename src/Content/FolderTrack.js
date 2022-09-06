@@ -1,4 +1,4 @@
-
+import folderIcon from '../img/folderIcon.svg'
 // import './FolderTrack.css';
 
 
@@ -12,8 +12,8 @@ function FolderTrack(props){
     }
     return(
         <div className="folderTrack" onDoubleClick={changePath}> 
-            
-            <div className="folderName">{props.folderName}</div> 
+            <div className="folderIcon"><img src={folderIcon} alt="" /></div>
+            <div className="folderName">{props.folderName.length>20? props.folderName.substring(0,20)+'...': props.folderName}</div> 
         </div>
     )
 }

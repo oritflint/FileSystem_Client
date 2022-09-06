@@ -1,15 +1,14 @@
 :root{
-    --error: rgb(255,124,124);
+    /* --error: rgb(255,124,124); */
+    --header: #023f47;
+    --btnTxt: #e0f880;
+    --forms: #2b786c;
+    --bg: #E2E7EA;
 }
 
 body{
     display: block;
-}
-
-button{
-    /* color: var(--error); */
-    height:50px;
-    width:150px;
+    background-color: var(--bg);
 }
 
 /*
@@ -19,10 +18,13 @@ some-container{
 }
 */
 
-.popup-bg{
+.popup-bg{  
     left:0px;
-    width:100%;
-    height:100vh;
+    right:0px;
+    top:0px;
+    bottom:0px;
+    /* width:100%;
+    height:100vh; */
     background-color:rgba(0, 0, 0, 0.5);
     position: absolute;
     z-index: 3000;
@@ -33,86 +35,222 @@ some-container{
 }
 
 .popup-content{
-    width:40%;
+    position: absolute;
+    display:block;
+    flex-wrap: wrap;
+    align-items: center;
+
+    width:30%;
     height:300px;
     background-color:white;
-    position: absolute;
     z-index: 4000;
-    display:block;
+    color: var(--header);
+    font-size: large;
+    border: 1px solid black;
+    border-radius: 17px;
+}
+
+.closePopupWin{
+    text-align: left;
+    margin-left:3px; 
+}
+
+.popupButtons{
+    display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 20px 100px;
+}
+
+.popupButtons button{
+    display: block;
+    padding:0px 10px;
+    margin:3px;
+    text-align: center;
 }
 
 .header{
     display: flex;
     justify-content: space-between;
+    padding: 10px;
+    height:40px;
+    background-color: var(--header);
+    color: white;
+}
+
+.logo{
+    width:250px;
+    color: var(--btnTxt);
+    display: flex;
     align-items: center;
-    padding: 10px;;
-    background-color: #575515;
-    color:white;
 }
 
 .content{
     display: flex;
     flex-wrap: nowrap;
+    justify-content:center;
+}
+
+.sideBar{
+    width:20%;
+    border: 1px solid var(--forms);
 }
 
 .main{
+    width:60%;
     display:flex;
     flex-wrap: wrap;
     text-align: center;
-    justify-content:center;
-    /* border:1px solid black;  */
-    /* width:50%; */
-    padding-top:30px;
-    background-color: lightgray;
+    justify-content:space-between;
+    /* margin: 5px; */
+    border-radius: var(--bs-border-radius)
 }
 
-.leftCol, .rightCol{
-    width:25%;
-    /* border:1px solid black;  */
+.subHeader{
+    background-color: var(--forms);   
+    height: 30px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 10px;
+    color: var(--btnTxt)
+}
+
+.Title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 28px;
+    height:63px;
+    width: 90%;
+    color: var(--header);
+    font-size: 17pt;
+    border-bottom: 2px solid gray;
 }
 
 .breadcrumb{
-    margin-top: 20px;
-    width:90%;
+    /* width:20%; */
     display: flex;
-    font-size: large;
     justify-content: space-between;
+    font-size: large;
+    margin-bottom:0px;
+    color: var(--header);
 
 }
-.buttons{
-    margin-top: 20px;
-    width:60%;
-    display: flex;
-    justify-content: space-between;
 
+.breadcrumb p{
+    margin-bottom: 0px;
+}
+
+.breadcrumb i{
+    margin-left:10px;
+}
+
+.buttons{
+    width:100%;
+    display: flex;
+    /* justify-content: space-between; */
+    border-radius: var(--bs-border-radius)
+
+}
+
+button{
+    display: flex;
+    height:56px;
+    width:150px;
+    background-color: var(--header);
+    color: var(--btnTxt);
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    font-size: 12pt;
+    border: none;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.searchSection{
+    display: flex;
+    height:56px;
+    width:360px;
+    background-color: var(--header);
+    color: var(--btnTxt);
+    align-items: center;
+    /* justify-content: space-between; */
+    padding-left: 12px;
+    font-size: 12pt;
+    border: none;
+    margin: 4px;
+    cursor: pointer;    
+}
+
+.searchSection input{
+    height:32px;
+    width:310px;
+    padding: 0px;
+}
+.searchSection input:focus{
+    height:30px;
+    border-style:none;
+}
+
+.srcIcon{
+    height:30px;
+    background-color: white; 
+    padding:2.2px;
+    margin-left: -1px;
+    display: flex;
+    align-items: center;
 }
 
 .userContent{
-    margin-top: 50px;
-    display:block;
+    margin: 20px 15px 0px;
+    display:flex;
+    flex-wrap:wrap;
 }
 
 .folderTrack{
-    display: flex;
-    /* width:90%; */
-    margin: 3px;
+    display: block;
+    flex-wrap: wrap;
+    margin: 7px;
     padding: 5px;
-    border:3px solid white;
     align-items: center;
+    text-align: center;
     cursor: pointer;
-    width:90%;
 }
 
 .folderIcon{
-    display: flex;
-    width:60px;
+    display:flex;
+    width:100px;
+    height: 70px;
+    background-color: white;
+    border: 1px solid var(--header);
+    /* border-radius: var(--bs-border-radius); */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 1;
+}
+
+.folderIcon:hover{
+    opacity: 0.5;
 }
 
 .folderName{
-    display: flex;
-    text-align: left;
-    width:400px;
+    width:100px;
+    text-align: center;
+    color: var(--header);
+    font-size: 11pt;
+    font-weight: bold;
+    margin-top: 14px;
+}
+
+.folderCreated{
+    width:100px;
+    text-align: center;
+    color: gray;
+    font-size: 8pt;
+    margin-top: 14px;    
 }
 
 .folderDetails{
@@ -139,7 +277,6 @@ some-container{
 }
 
 .form-frame{
-    width:90%;
     margin-top:30px;
     display: block;
     /* border:1px solid black; */
@@ -148,4 +285,59 @@ some-container{
 .form-frame input{
     border: none;
     font-size: medium;
+}
+
+.menuitem{
+    width:30px;
+    height:15px;
+    padding: -10px 3px;
+    align-items:center;
+    background-color: lightgray;
+}
+
+.menuitem i{
+    margin-top: -12px;
+    /* height:10px; */
+    padding: 0px;
+}
+
+
+.menuItemBG{
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    text-align: left;
+    padding: 5px;
+    opacity:1;
+    z-index: 1000;
+}
+
+.dropdown-item{
+    background-color: white;
+    color:#023f47;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.dropdown-item i{
+    margin-top: 0px;
+    padding-right: 10px;
+}
+
+.dropdown-item-hover{
+    background-color: #023f47;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.dropdown-item-hover i{
+    margin-top: 0px;
+    padding-right: 10px;
+}
+
+.fullOpacity{
+    opacity: 1;
 }
