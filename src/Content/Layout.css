@@ -11,12 +11,10 @@ body{
     background-color: var(--bg);
 }
 
-/*
-some-container{
-    width:600px;
-    max-width:100%;
+.popup-message{
+    width:300px;    
+    padding-top: 20px;
 }
-*/
 
 .popup-bg{  
     left:0px;
@@ -59,7 +57,7 @@ some-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 100px;
+    padding-top: 20px;
 }
 
 .popupButtons button{

@@ -46,11 +46,11 @@ function Main({setIsDisplayPopup}){
         const formData = new FormData()
         formData.append('userFile', state.fileName)
         formData.append('filePath', currentPath)
-        const result = axios.post(`http://localhost:4000/api/upload/?path=${currentPath}`, formData, {
+        const res = axios.post(`http://localhost:4000/api/upload/?path=${currentPath}`, formData, {
         }).then(res => {
         console.log("🚀 ~ file: Main.js ~ line 51 ~ onUploadFile ~ res.data", res.data)
             if(res.data.status==300){
-                message.current.value = res.data
+                message.current.value = res.data.statusText
             }
             else{
                 setRefreshPage(!refreshPage)
@@ -64,6 +64,7 @@ function Main({setIsDisplayPopup}){
     //ON CREATE_FOLDER
     //add new named sub-folder in currenr place
     const createFolder=(e)=> {
+        debugger
         const newDir = folderName.current.value
         let resData =''
         //e.preventDefault()
@@ -156,9 +157,12 @@ function Main({setIsDisplayPopup}){
                             <input type="file" onChange={onFileChange} />
                         </div>
                         <div className='popupButtons'>
-                            <button className="btn btn-primary" type="submit">Upload file</button>
+                        <button className="btn btn-primary" type="submit">Upload file</button>
+                        <button className="btn btn-primary" onClick={()=>setIsDisplayUpload(false)}>Cancel</button>
+                            
                         </div>
-                        <input className="message" type="text" ref={message}></input>
+                            <input className="popup-message" type="text" width={300} ref={message}></input>
+                        
                     </form>
                 </div>
             </div>}

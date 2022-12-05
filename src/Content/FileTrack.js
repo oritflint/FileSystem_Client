@@ -28,6 +28,7 @@ function FileTrack(props){
     //ON DELETE_FILE
     //
     const deleteFile=()=> {
+        
         const filePath = filename
         //e.preventDefault()
         axios.post("http://localhost:4000/api/delFile/",{
